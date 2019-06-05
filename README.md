@@ -38,12 +38,17 @@ RESTful routes look like:
 * Delete: POST /resource/:id/delete
 
 GET /unicorns/123
+
 GET /users/123/posts/12
 
 B - GET /dogs
+
 R - GET /dogs/:id
+
 E - POST /dogs/:id
+
 A - POST /dogs | GET /dogs/new
+
 D - POST /dogs/:id/delete
 
 ### Useful Links
