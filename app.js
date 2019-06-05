@@ -50,6 +50,14 @@ app.get('/dogs/:id', (request, response) => {
     response.render('dog', templateVars);
 });
 
+// Edit
+app.post('/dogs/:id', (request, response) => {
+    const newName = request.body.newname;
+    const id = request.params.id;
+    dogs[id] = newName;
+    response.redirect(`/dogs/${id}`);
+});
+
 app.listen(3000, () => {
     console.log('app is listening on port 3000');
 });
