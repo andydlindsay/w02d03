@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -17,12 +18,27 @@ app.set('view engine', 'ejs');
 // set up the logger
 app.use(morgan('dev'));
 
+// add body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // Browse
 app.get('/dogs', (request, response) => {
     const templateVars = {
         dogs
     };
     response.render('index', templateVars);
+});
+
+// Add
+app.post('/dogs', (request, response) => {
+    const id = request.body.id;
+    const name = request.body.name;
+    dogs[id] = name;
+    response.redirect('/dogs');
+});
+
+app.get('/dogs/new', (request, response) => {
+    response.render('new_dog');
 });
 
 // Read

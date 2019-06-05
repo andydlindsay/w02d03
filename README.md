@@ -28,7 +28,7 @@ GET /users/123/posts/12
 B - GET /dogs
 R - GET /dogs/:id
 E - POST /dogs/:id
-A - POST /dogs
+A - POST /dogs | GET /dogs/new
 D - POST /dogs/:id/delete
 
 
