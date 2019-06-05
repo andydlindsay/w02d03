@@ -25,6 +25,15 @@ app.get('/dogs', (request, response) => {
     response.render('index', templateVars);
 });
 
+// Read
+app.get('/dogs/:id', (request, response) => {
+    const templateVars = {
+        id: request.params.id,
+        dog: dogs[request.params.id]
+    };
+    response.render('dog', templateVars);
+});
+
 app.listen(3000, () => {
     console.log('app is listening on port 3000');
 });
