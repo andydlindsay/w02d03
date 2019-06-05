@@ -1,26 +1,41 @@
 # W02D03 CRUD with Express
 
 ### To Do
-- [ ] Implement CRUD over HTTP with Express
-- [ ] Use forms to submit HTTP requests
-- [ ] Practice debugging Express
+- [x] Implement CRUD/BREAD over HTTP with Express
+- [x] Use forms to submit HTTP requests
+- [x] Practice debugging Express
 
 ## Express
 
-Gives us the ability to add middleware
-Library/framework that lets us set up a server
+A framework that lets us create routes and write/include middleware.
 
 ## CRUD / BREAD
 
-Create Read Update Delete
-Browse Read Edit Add Delete
+**CRUD** = **C**reate **R**ead **U**pdate **D**elete
+
+**BREAD** = **B**rowse **R**ead **E**dit **A**dd **D**elete
 
 ## Routes
 
-Path - /resource
-Verb - GET, POST, PATCH, PUT, DELETE
+A route is made up of a **VERB** and a **PATH**.
+
+Verbs: **GET**, **POST**, **PUT**, **PATCH**, **DELETE**
+
+Path: `example.com`**/resource**, `example.com`**/resource/:id**
 
 ## REST - REpresentational State Transfer
+
+REST means that the path that we are going to should represent the data being transferred.
+
+An API that uses the REST convention is said to be RESTful.
+
+RESTful routes look like:
+
+* Browse: GET  /resource
+* Read:   GET  /resource/:id
+* Edit:   POST /resource/:id
+* Add:    POST /resource
+* Delete: POST /resource/:id/delete
 
 GET /unicorns/123
 GET /users/123/posts/12
@@ -31,14 +46,6 @@ E - POST /dogs/:id
 A - POST /dogs | GET /dogs/new
 D - POST /dogs/:id/delete
 
-
-
-
-
-
-
-
-
 ### Useful Links
 * [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)
 * [BREAD/CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
@@ -48,3 +55,5 @@ D - POST /dogs/:id/delete
 * [Body-Parser](https://github.com/expressjs/body-parser)
 * [Delete Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete)
 * [HTTP Forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data)
+
+### Inspired by [Sadie Freeman's](https://github.com/sadief) [lecture](https://github.com/sadief/lighthouse-labs-lectures/blob/master/crud-with-express/class-notes.md) on the same topic

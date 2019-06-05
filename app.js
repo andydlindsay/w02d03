@@ -47,15 +47,32 @@ app.get('/dogs/:id', (request, response) => {
         id: request.params.id,
         dog: dogs[request.params.id]
     };
-    response.render('dog', templateVars);
+    if (templateVars.dog) {
+        response.render('dog', templateVars);
+    } else {
+        response.redirect('/dogs');
+    }
 });
 
 // Edit
 app.post('/dogs/:id', (request, response) => {
     const newName = request.body.newname;
     const id = request.params.id;
-    dogs[id] = newName;
+    if (newName) {
+        dogs[id] = newName;
+    }
     response.redirect(`/dogs/${id}`);
+});
+
+// Delete
+app.post('/dogs/:id/delete', (request, response) => {
+    delete dogs[request.params.id];
+    response.redirect('/dogs');
+});
+
+// catchall route
+app.get('*', (request, response) => {
+    response.redirect('/dogs');
 });
 
 app.listen(3000, () => {

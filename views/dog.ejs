@@ -7,6 +7,7 @@
     <title>Dog</title>
 </head>
 <body>
+    <a href="/dogs">Home</a>
     <h1>Just one dog!</h1>
     <h3>Key: <%= id %></h3>
     <h3>Name: <%= dog %></h3>
@@ -16,6 +17,9 @@
         <input type="text" name="newname" id="name">
         <br/>
         <button type="submit">Edit Dog</button>
+    </form>
+    <form method="POST" action="/dogs/<%= id %>/delete">
+        <button type="submit">Delete Dog</button>
     </form>
 </body>
 </html>

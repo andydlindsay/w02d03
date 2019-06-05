@@ -12,7 +12,11 @@
     <% if (dogs) { %>
         <ul>
             <% for (const key in dogs) { %>
-                <li><h3><%= `${key} - ${dogs[key]}` %></h3></li>
+                <a href="/dogs/<%= key %>">
+                    <li>
+                        <h3><%= `${key} - ${dogs[key]}` %></h3>
+                    </li>
+                </a>
             <% } %>
         </ul>
     <% } %>
