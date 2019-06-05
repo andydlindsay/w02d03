@@ -3,14 +3,26 @@ const morgan = require('morgan');
 
 const app = express();
 
+// database
+const dogs = {
+    'asdf': 'Tim',
+    '14123': 'Jerry',
+    '1fgs': 'Sarah',
+    'asdfas': 'Rebecca',
+};
+
 // set view engine to ejs
 app.set('view engine', 'ejs');
 
 // set up the logger
 app.use(morgan('dev'));
 
+// Browse
 app.get('/dogs', (request, response) => {
-    response.render('index');
+    const templateVars = {
+        dogs
+    };
+    response.render('index', templateVars);
 });
 
 app.listen(3000, () => {

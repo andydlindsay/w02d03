@@ -8,5 +8,13 @@
 </head>
 <body>
     <h1>All of our dogs</h1>
+
+    <% if (dogs) { %>
+        <ul>
+            <% for (const key in dogs) { %>
+                <li><h3><%= `${key} - ${dogs[key]}` %></h3></li>
+            <% } %>
+        </ul>
+    <% } %>
 </body>
 </html>
